@@ -936,3 +936,58 @@ img {
     }
 
 }
+
+/* Classes CSS - Arthur - Footer */
+footer {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    font-size: 14px;
+    .container-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        h4 {
+            font-size: 18px;
+            font-family: var(--font-heading);
+        }
+        .box-footer {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+                h5 {
+                    font-family: var(--font-heading);
+                    font-size: 12px;
+                }
+                a {
+                    font-size: 10px;
+
+                }
+                a:hover {
+                    color: var(--color-yellow);
+                }
+            }
+        }
+    }
+    .container-footer-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-top: solid var(--color-grey) 0.1px;
+        font-size: 8px;
+    }
+}
+
+.container-footer-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-top: solid var(--color-grey) 0.1px;
+    font-size: 8px;
+}
