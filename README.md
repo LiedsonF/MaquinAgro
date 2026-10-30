@@ -68,7 +68,7 @@ O projeto faz parte do desafio acadêmico **FIAP Agrotech**, alinhado ao Objetiv
 
 Projeto acadêmico desenvolvido em equipe como parte do desafio FIAP Agrotech.
 
-**Squad: The Future is Now**
+**Grupo: 404 Team Not Found**
 
 ## 🌎 Impacto social
 
@@ -84,5 +84,10 @@ O MaquinAgro busca contribuir para um cenário em que pequenos produtores tenham
 </p>
 
 <p align="center">
-  Desenvolvido com 💚 pela equipe 404 Team Not Found.
+  Desenvolvido com 💚 pela equipe 404 Team Not Found
+    Liedson Fernando Chapiewsky 
+ 		Arthur de Laurentiz Mendes 
+    Victor Biazzin Rubinho
+    Lucas Pereira Martins 
+    Kauê Sequeira C. de Oliveira.
 </p>
