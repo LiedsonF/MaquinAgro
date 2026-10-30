@@ -24,6 +24,7 @@
                 <a href="#como-funciona">Como funciona</a>
                 <a href="#maquinas">Máquinas</a>
                 <a href="#sobre">Sobre nós</a>
+                <a href="#contato">contato</a>
                 <a class="nav-login" href="#">Entrar</a>
 
             </div>
@@ -222,6 +223,59 @@
         </div>
 
     </div>
+
+</section>
+
+        <section class="container-form" id="contato">
+
+    <h3>Fale conosco</h3>
+
+    <form name="fale-conosco" id="fale-conosco" method="get" action="./index.html#inicio">
+
+        <fieldset class="box-form">
+
+            <input
+                type="text"
+                name="nome-usuario"
+                required
+                placeholder="Digite seu nome"
+                minlength="5"
+                maxlength="20"
+                autocomplete="name"
+            >
+
+            <input
+                type="tel"
+                name="tel-usuario"
+                required
+                placeholder="Telefone com DDD"
+                autocomplete="tel"
+            >
+
+            <input
+                type="email"
+                name="email-usuario"
+                required
+                placeholder="Digite seu e-mail"
+                minlength="10"
+                maxlength="30"
+            >
+
+            <textarea
+                name="msg-usuario"
+                placeholder="Escreva sua mensagem..."
+                required
+                maxlength="1000"
+            ></textarea>
+
+            <div>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+
+        </fieldset>
+
+    </form>
 
 </section>
 
