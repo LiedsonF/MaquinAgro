@@ -84,5 +84,5 @@ O MaquinAgro busca contribuir para um cenário em que pequenos produtores tenham
 </p>
 
 <p align="center">
-  Desenvolvido com 💚 pela equipe The Future is Now.
+  Desenvolvido com 💚 pela equipe 404 Team Not Found.
 </p>
