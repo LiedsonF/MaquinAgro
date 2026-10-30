@@ -1,0 +1,847 @@
+
+/* ==================================================
+   MAQUINAGRO
+   CSS PRINCIPAL
+   ================================================== */
+
+
+/* ==================================================
+   01. FONTES
+   ================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
+
+
+/* ==================================================
+   02. VARIÁVEIS GLOBAIS
+   ================================================== */
+
+:root {
+
+    /* Cores principais */
+    --color-green: #1F3D2B;
+    --color-yellow: #E3A72F;
+    --color-white: #F7F5EF;
+
+    /* Cores secundárias */
+    --color-grey: #5B6357;
+    --color-beige: #EFEBE0;
+    --color-dark-yellow: #8A6512;
+
+    /* Tipografia */
+    --font-primary: 'Inter', sans-serif;
+    --font-heading: 'Sora', sans-serif;
+
+    /* Transições */
+    --transition-default: 0.3s ease;
+
+}
+
+
+/* ==================================================
+   03. RESET E CONFIGURAÇÕES GERAIS
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-green);
+    font-family: var(--font-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   04. COMPONENTES REUTILIZÁVEIS
+   ================================================== */
+
+/* Botões */
+
+.button {
+    display: inline-block;
+    padding: 8px 12px;
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: var(--transition-default);
+}
+
+.button--primary {
+    background-color: var(--color-yellow);
+    color: var(--color-green);
+}
+
+.button--primary:hover {
+    background-color: var(--color-white);
+}
+
+.button--outline {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.button--outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-green);
+}
+
+
+/* ==================================================
+   05. HEADER E NAVEGAÇÃO
+   ================================================== */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 88px;
+    padding: 12px 24px;
+
+    background-color: var(--color-white);
+}
+
+/* Identidade visual */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.brand img {
+    width: 64px;
+}
+
+/* Links de navegação */
+
+.site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.site-nav__links a {
+    position: relative;
+
+    transition: color var(--transition-default);
+}
+
+/* Linha animada dos links */
+
+.site-nav__links a:not(.nav-login)::after {
+    content: "";
+
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--color-yellow);
+
+    transition: width var(--transition-default);
+}
+
+.site-nav__links a:not(.nav-login):hover::after {
+    width: 100%;
+}
+
+/* Botão de login */
+
+.nav-login {
+    padding: 10px 22px;
+
+    border-radius: 6px;
+
+    background-color: var(--color-dark-yellow);
+    color: var(--color-white);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background-color var(--transition-default);
+}
+
+.nav-login:hover {
+    background-color: var(--color-green);
+}
+
+
+/* ==================================================
+   06. HERO / BANNER PRINCIPAL
+   ================================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 24px;
+
+    min-height: calc(100vh - 88px);
+    padding: 64px 6%;
+
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+/* Conteúdo textual */
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Identificação da seção */
+
+.hero__eyebrow {
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    background-color: var(--color-yellow);
+    color: var(--color-green);
+
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Título principal */
+
+.hero__title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+/* Descrição */
+
+.hero__description {
+    color: var(--color-beige);
+    font-size: 14px;
+}
+
+/* Ações */
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 8px;
+}
+
+/* Imagem principal */
+
+.hero__image {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* ==================================================
+   07. COMO FUNCIONA
+   ================================================== */
+
+.how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    min-height: 100vh;
+    padding: 64px 6%;
+
+    background-color: var(--color-beige);
+}
+
+/* Cabeçalho da seção */
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    text-align: center;
+}
+
+.section-heading h2,
+.featured-machines__heading h2 {
+    color: var(--color-green);
+
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.section-heading p,
+.featured-machines__heading p {
+    font-size: 16px;
+}
+
+/* Grid de etapas */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    width: 100%;
+}
+
+/* Cards */
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding: 16px;
+
+    border: 1px solid var(--color-grey);
+    border-radius: 8px;
+
+    background-color: var(--color-white);
+}
+
+/* Ícones */
+
+.step__icon {
+    width: 32px;
+    height: 32px;
+
+    padding: 4px;
+
+    border-radius: 4px;
+
+    background-color: var(--color-beige);
+
+    object-fit: contain;
+}
+
+/* Numeração */
+
+.step__number {
+    color: var(--color-dark-yellow);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Títulos */
+
+.step__title {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Descrições */
+
+.step p {
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   08. MÁQUINAS EM DESTAQUE
+   ================================================== */
+
+.featured-machines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 64px 6%;
+
+    background-color: var(--color-white);
+}
+
+/* Cabeçalho */
+
+.featured-machines__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 32px;
+}
+
+/* Link para todas as máquinas */
+
+.all-machines {
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: underline;
+}
+
+/* Grid de máquinas */
+
+.machines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    width: 100%;
+}
+
+/* Card individual */
+
+.machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Imagem */
+
+.machine > img {
+    width: 100%;
+    height: 180px;
+
+    background-color: var(--color-beige);
+
+    object-fit: cover;
+}
+
+/* Informações */
+
+.machine__details {
+    align-self: stretch;
+}
+
+/* Categoria */
+
+.machine__category {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background-color: #e8f4eb;
+    color: var(--color-green);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Nome */
+
+.machine__name {
+    margin-top: 8px;
+
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Localização */
+
+.machine__location {
+    font-size: 12px;
+}
+
+/* Rodapé do card */
+
+.machine__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    align-self: stretch;
+
+    font-weight: 700;
+}
+
+.machine__footer span {
+    font-size: 12px;
+}
+
+.machine__footer a {
+    color: var(--color-green);
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   09. RESPONSIVIDADE
+   ================================================== */
+
+/* Tablets */
+
+@media (max-width: 700px) {
+
+    /* Navegação */
+
+    .site-nav {
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .site-nav__links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+        padding: 48px 20px;
+    }
+
+    .hero__title {
+        font-size: 28px;
+    }
+
+    /* Como funciona */
+
+    .how-it-works {
+        min-height: auto;
+        padding: 56px 20px;
+    }
+
+    /* Máquinas */
+
+    .featured-machines {
+        min-height: auto;
+        padding: 56px 20px;
+    }
+
+    /* Grids */
+
+    .steps-grid,
+    .machines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-machines__heading {
+        align-items: flex-start;
+    }
+
+}
+
+
+/* Smartphones */
+
+@media (max-width: 440px) {
+
+    .site-nav {
+        flex-direction: column;
+    }
+
+    .site-nav__links {
+        justify-content: flex-start;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero__title {
+        font-size: 26px;
+    }
+
+}
+
+
+/* ==================================================
+   10. ACESSIBILIDADE
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* Ajustes exclusivos para telas grandes */
+@media (min-width: 1024px) {
+
+    .hero__eyebrow {
+        font-size: 15px;
+    }
+
+    .hero__title {
+        font-size: 58px;
+        line-height: 1.15;
+    }
+
+    .hero__description {
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 600px;
+    }
+
+    .hero__actions .button {
+        font-size: 16px;
+        padding: 15px 26px;
+    }
+}
+
+/* COMO FUNCIONA - AJUSTES PARA PC */
+@media (min-width: 1024px) {
+
+    .how-it-works {
+        padding: 90px 8%;
+    }
+
+    /* Título da seção */
+    .section-heading h2 {
+        font-size: 44px;
+        margin-bottom: 16px;
+    }
+
+    .section-heading p {
+        font-size: 19px;
+        line-height: 1.6;
+    }
+
+    /* Espaçamento entre os cards */
+    .steps-grid {
+        gap: 32px;
+        margin-top: 55px;
+        width: 100%;
+    }
+
+    /* Cards individuais */
+    .step {
+        padding: 38px 30px;
+    }
+
+    /* Ícones */
+    .step__icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 24px;
+    }
+
+    /* Numeração */
+    .step__number {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    /* Título dos passos */
+    .step__title {
+        font-size: 25px;
+        margin-bottom: 16px;
+    }
+
+    /* Descrição */
+    .step p {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+}
+
+/* MÁQUINAS EM DESTAQUE - AJUSTES PARA PC */
+.featured-machines {
+    padding: 90px 8%;
+}
+
+/* Cabeçalho da seção */
+.featured-machines__heading h2 {
+    font-size: 44px;
+    margin-bottom: 16px;
+}
+
+.featured-machines__heading p {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.all-machines {
+    font-size: 17px;
+}
+
+/* Grade de máquinas */
+.machines-grid {
+    gap: 32px;
+    margin-top: 45px;
+}
+
+/* Cards */
+.machine {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Imagens dos cards */
+.machine > img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* Informações */
+.machine__details {
+    padding: 24px;
+}
+
+.machine__category {
+    font-size: 14px;
+}
+
+.machine__name {
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.machine__location {
+    font-size: 16px;
+}
+
+/* Rodapé dos cards */
+.machine__footer {
+    padding: 20px 24px;
+}
+
+.machine__footer p {
+    font-size: 21px;
+}
+
+.machine__footer p span {
+    font-size: 14px;
+}
+
+
+/* CARDS DE MÁQUINAS */
+
+.machine {
+    background-color: #EFEBE0;
+    border: 1px solid #DED9CC;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.machine:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(31, 61, 43, 0.12);
+}
+
+/* INFORMAÇÕES DA MÁQUINA */
+
+.machine__details {
+    padding: 24px;
+}
+
+.machine__category {
+    color: #8A6512;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.machine__name {
+    color: #1F3D2B;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.machine__location {
+    color: #5B6357;
+    font-size: 14px;
+}
+
+/* PREÇO E BOTÃO */
+
+.machine__footer {
+    background-color: #E5E1D6;
+    border-top: 1px solid #D5D0C3;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.machine__price {
+    color: #1F3D2B;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.machine__price span {
+    color: #5B6357;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.machine__footer a {
+    font-size: 16px;
+    background-color: #E3A72F;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.machine__footer a:hover {
+    background-color: #1F3D2B;
+    color: #fff;
+}
