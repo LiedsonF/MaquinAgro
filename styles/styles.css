@@ -692,6 +692,9 @@ img {
 .all-machines {
     font-size: 17px;
 }
+.all-machines:hover {
+    color: var(--color-yellow);
+}
 
 /* Grade de máquinas */
 .machines-grid {
@@ -980,14 +983,7 @@ img {
        }
     }
  }
-    .container-footer-2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        border-top: solid var(--color-grey) 0.1px;
-        font-size: 8px;
-    }
+    
 }
 
 .container-footer-2 {
